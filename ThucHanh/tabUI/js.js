@@ -4,19 +4,18 @@ const $$ = document.querySelectorAll.bind(document);
 const tabs = $$('.tab-item');
 const panes = $$('.tab-pane');
 
-const tabActives = $('.tab-item.active');
+const tabActive = $('.tab-item.active');
 const line = $('.tabs .line');
 
-requestIdleCallback(function () {
-    line.style.left = tabActives.offsetLeft + "px";
-    line.style.width = tabActives.offsetWidth + "px";
-  });
+requestIdleCallback(() => {
+    line.style.left = tabActive.offsetLeft + 'px';
+    line.style.width = tabActive.offsetWidth + 'px';
+});
 
 tabs.forEach((tab, index) => {
     const pane = panes[index];
 
     tab.onclick = function () {
-
         $('.tab-item.active').classList.remove('active');
         $('.tab-pane.active').classList.remove('active');
 
@@ -26,6 +25,5 @@ tabs.forEach((tab, index) => {
         this.classList.add('active');
         pane.classList.add('active');
 
-    }
+    };
 });
-
