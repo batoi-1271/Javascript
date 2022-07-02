@@ -12,10 +12,6 @@ start();
 function getCourse(callBack) {
     fetch(courseApi)
     
-    .then(function(response) {
-        return response.join();
-    })
-
     .then((response) => {
         return response.json();
     })
@@ -83,63 +79,3 @@ function handleCreate() {
         });
     }
 }
-const a = 10;
-class Course {
-    constructor(id, name, price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-}
-
-
-const phpCourses = new Course(1, 'PHP', 1000);
-console.log(phpCourses)
-
-function looger(log = 'Gia tri mac dinh') {
-    console.log(log);
-}
-looger()
-
-var name = "Nguyen Ba Toi";
-var age = 21;
-var address = "Bac Giang";
-
-var myInfo = {
-    name,
-    age,
-    address,
-    getName() {
-        return this.name;
-    }
-}
-
-console.log(myInfo.getName());
-
-var fieldName = 'name';
-var fieldPrice = 'price';
-
-const Courses = {
-    [fieldName]: "Javascript",
-    [fieldPrice]: 2000
-};
-console.log(Courses);
-
-var animal = {
-    name : 'Chicken',
-    size : 'small',
-    sound : {
-        name: "NBT",
-        gaTrong : 'o ó o o ...',
-        gaMai : 'cục tác... cục tác'
-    }
-    };
-    var {name: nameGa, size, sound: {name, gaTrong}, description = "Default description"} = animal;
-    console.log(nameGa, size, name, gaTrong, description);
-
-
-var myArray = ['JS', 'PHP', 'Ruby'];
-var [b, ...rest] = myArray;
-
-console.log(b,);
-console.log(rest);

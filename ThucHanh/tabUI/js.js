@@ -27,3 +27,4 @@ tabs.forEach((tab, index) => {
 
     };
 });
+
