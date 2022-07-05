@@ -20,8 +20,6 @@
 
 
 
-// CODE tôi
-
 var postsApi = 'https://jsonplaceholder.typicode.com/posts';
 
 var usersApi = 'https://jsonplaceholder.typicode.com/users';
