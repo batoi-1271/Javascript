@@ -1,4 +1,7 @@
-function Validator(formSelector, options = {}) {
+function Validator(formSelector) {
+
+    var _this = this;
+    var formRules = {};
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -9,7 +12,6 @@ function Validator(formSelector, options = {}) {
         }
     }
 
-    var formRules = {};
     /**
      * Quy ước tạo rule
      * - Nếu có lỗi thì return `error message`
@@ -80,10 +82,10 @@ function Validator(formSelector, options = {}) {
             var rules = formRules[event.target.name];
             var errorMessage;
 
-            rules.find(function (rule) {
+            for (var rule of rules) {
                 errorMessage = rule(event.target.value);
-                return errorMessage;
-            });
+                if (errorMessage) break;
+            }
 
             // Nếu có lỗi thì hiển thị ra website
             if (errorMessage) {
@@ -134,11 +136,8 @@ function Validator(formSelector, options = {}) {
 
         // Khi không có lỗi thì submit form
         if (isValid) {
-            if (typeof options.onSubmit === 'function') {
-
-                
-
-                options.onSubmit();
+            if (typeof _this.onSubmit === 'function') {
+                _this.onSubmit();
             } else {
                 formElement.susbmit();
             }
