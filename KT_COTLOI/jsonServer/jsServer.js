@@ -11,11 +11,11 @@ start();
 
 function getCourse(callBack) {
     fetch(courseApi)
-    
-    .then((response) => {
-        return response.json();
-    })
-    .then(callBack);
+
+        .then((response) => {
+            return response.json();
+        })
+        .then(callBack);
 }
 
 function createCourse(data, callBack) {
@@ -27,8 +27,8 @@ function createCourse(data, callBack) {
         body: JSON.stringify(data)
     };
     fetch(courseApi, options)
-    .then(response => response.json())
-    .then(callBack)
+        .then(response => response.json())
+        .then(callBack)
 }
 
 function handleDeleteCourse(id) {
@@ -39,15 +39,28 @@ function handleDeleteCourse(id) {
         }
     };
     fetch(courseApi + '/' + id, options)
-    .then(response => response.json())
-    .then(() => {
-        var courseItem = document.querySelector('.course-item-' +id);
-        if (courseItem) {
-            courseItem.remove();
-        }
-    })
+        .then(response => response.json())
+        .then(() => {
+            var courseItem = document.querySelector('.course-item-' + id);
+            if (courseItem) {
+                courseItem.remove();
+            }
+        })
 }
 
+function handlePutCourse(id, data, callback) {
+    fetch(courseApi + '/' + id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(callback)
+}
 
 function renderCourse(courses) {
     var listCourseBlock = document.querySelector('#list-course');
@@ -57,7 +70,7 @@ function renderCourse(courses) {
                 <h4 class="course-item-${course.id}h4">${course.name}</h4>
                 <p class="course-item-${course.id}p">${course.description}</p>
                 <button onclick="handleDeleteCourse(${course.id})">Delete</button>
-                <button onclick="handleEditCourse(${course.id})">Edit</button>
+                <button onclick="handlePutForm(${course.id})">UPDATE</button>
             </li>
         `
     });
@@ -77,5 +90,37 @@ function handleCreate() {
         createCourse(formData, () => {
             getCourse(renderCourse);
         });
+    }
+}
+
+
+function handlePutForm(id) {
+    let name = document.querySelector('.course-item-' + id + ' h4').innerHTML;
+    let description = document.querySelector('.course-item-' + id + ' p').innerHTML;
+
+    console.log(name, description);
+
+    document.querySelector('input[name="name"]').value = name;
+    document.querySelector('input[name="description"]').value = description;
+
+    let saveBtn = document.getElementById('create');
+    saveBtn.innerHTML = 'Lưu';
+
+    saveBtn.onclick = function () {
+        let name = document.querySelector('input[name="name"]').value;
+        let description = document.querySelector('input[name="description"]').value;
+        let formData = {
+            name: name,
+            description: description
+        };
+        handlePutCourse(id, formData, function () {
+            // document.querySelector('.course-item-' + id + ' h4').innerHTML = name
+            // document.querySelector('.course-item-' + id + ' p').innerHTML = description;
+            getCourse(renderCourse);
+
+            document.querySelector('input[name="name"]').value = '';
+            document.querySelector('input[name="description"]').value = '';
+            saveBtn.innerHTML = 'Create';
+        })
     }
 }
