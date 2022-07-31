@@ -67,10 +67,13 @@ function renderCourse(courses) {
     var htmls = courses.map((course) => {
         return `
             <li class="course-item-${course.id}">
+
                 <h4 class="course-item-${course.id}h4">${course.name}</h4>
                 <p class="course-item-${course.id}p">${course.description}</p>
+
                 <button onclick="handleDeleteCourse(${course.id})">Delete</button>
                 <button onclick="handlePutForm(${course.id})">UPDATE</button>
+                
             </li>
         `
     });
