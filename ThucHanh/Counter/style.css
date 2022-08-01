@@ -1,0 +1,48 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#counter {
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-descrease i{
+    font-size: 25px;
+    background-color: red;
+    padding: 20px;
+    border-radius: 50%;
+    line-height: 25px;
+    color: white;
+    cursor: pointer;
+}
+.counter-number {
+    height: 50px;
+}
+.counter-number input {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+.icon-increase i{
+    font-size: 25px;
+    background-color: blue;
+    padding: 20px;
+    border-radius: 50%;
+    line-height: 25px;
+    color: white;
+    cursor: pointer;
+}

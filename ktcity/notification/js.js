@@ -37,3 +37,17 @@ const timer = setInterval(() => {
     }
     lastTitle = title;
 }, 4000)
+
+
+function changeIcon() {
+    const iconNew = document.createElement('i')
+    iconNew.className = 'fa-solid fa-xmark';
+
+    const oldIcon = document.querySelector('.icon');
+
+    oldIcon.onclick = ()=> {
+        document.body.replaceChild(iconNew, oldIcon)
+    }
+}
+
+changeIcon()

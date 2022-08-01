@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
+html {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+input, textarea, select, button {
+    outline: none;
+}
+label, button {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.button {
+    display: block;
+    width: 150px;
+    border: 0;
+    background-color: #07a787;
+    color: white;
+    padding: 15px;
+    margin: 15px auto;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: zoom-out;
+
+}
+.modal-content {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10;
+  padding: 30px;
+}
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 100rem;
+  color: white;
+  background-color: red;
+  padding: 5px;
+  transform: translate(50%, -50%);
+  text-align: center;
+}
+.close {
+  pointer-events: none;
+  font-size: 20px;
+}
+.modal-main {
+  overscroll-behavior-y: contain;
+  line-height: 1.4;
+}
