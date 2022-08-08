@@ -67,6 +67,8 @@ img {
   position: relative;
   z-index: 10;
   padding: 30px;
+  animation: start 0.5s ;
+
 }
 .modal-close {
   position: absolute;
@@ -89,4 +91,13 @@ img {
 .modal-main {
   overscroll-behavior-y: contain;
   line-height: 1.4;
+}
+
+@keyframes start {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

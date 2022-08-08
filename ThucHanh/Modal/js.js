@@ -66,3 +66,10 @@ document.body.addEventListener('click', function(event) {
 //         document.body.removeChild(modalClose);
 //     })
 // }
+
+
+const haha = document.getElementsByClassName('haha');
+const hahaID = document.getElementById('haha');
+
+haha.map((haha) => console.log(haha))
+console.log(typeof hahaID)
