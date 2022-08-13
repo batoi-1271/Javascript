@@ -1,41 +1,40 @@
 const form = document.querySelector('form');
 const todoList = document.querySelector('.todo-list');
-const items = JSON.parse(localStorage.getItem('todo')) || [];
 
-if (items.length > 0) {
-    items.forEach(element => createTodoList(element)); //
+const handleCreateTodo = function (item) {
+    const todoItem = document.createElement('div');
+    todoItem.classList.add('todo-item');
+
+    todoItem.innerHTML = `<span class="todo-text">${item}</span>
+                          <i class="fa fa-trash todo-remove"></i>`
+    todoList.appendChild(todoItem);
 }
 
-function createTodoList(item) {
-    const todoItems = document.createElement('div');
-    todoItems.classList.add('todo-item');
+const items = JSON.parse(localStorage.getItem("batoi")) || [];
 
-    todoItems.innerHTML = `<span class="todo-text">${item}</span>
-    <i class="fa fa-trash todo-remove"></i>`;
-
-    todoList.appendChild(todoItems);
+if (Array.isArray(items) && items.length > 0) {
+    [...items].forEach(item => handleCreateTodo(item));
 }
 
-form.onsubmit = function(evt) {
-    evt.preventDefault();
-    const todoValue = this.elements['todo'].value;
+form.onsubmit = function (e) {
+    e.preventDefault();
+    const textValue = e.target.elements['todo'].value;
+    handleCreateTodo(textValue);
+    items.push(textValue);
 
-    if (!todoValue) return;
-    createTodoList(todoValue);
+    localStorage.setItem('batoi', JSON.stringify(items));
 
-    items.push(todoValue);
-    localStorage.setItem('todo', JSON.stringify(items));
-    this.elements['todo'].value = "";
+    e.target.elements['todo'].value = "";
 }
 
-todoList.onclick = function(evt) {
-    if (evt.target.matches('.todo-remove')) {
-        const todoDOM = evt.target.parentNode;
-        todoDOM.parentNode.removeChild(todoDOM);
+todoList.onclick = function (e) {
+    if (e.target.matches('.todo-remove')) {
+        const todo = e.target.parentNode;
+        todo.parentNode.removeChild(todo);
 
-        const textDOM = evt.target.previousElementSibling.textContent;
-        const newTodos = items.filter(item => item !== textDOM)
+        const textContent = e.target.previousElementSibling.textContent;
+        const newTodo = items.filter(item => item !== textContent);
 
-        localStorage.setItem('todo', JSON.stringify(newTodos));
+        localStorage.setItem('batoi', JSON.stringify(newTodo));
     }
 }

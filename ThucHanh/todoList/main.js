@@ -2,6 +2,7 @@ window.addEventListener('load', function() {
 
     const todoList = document.querySelector('.todo-list');
     const form = document.querySelector('form');
+    
     const todoItems = JSON.parse(localStorage.getItem("list task")) || [];
 
     if (Array.isArray(todoItems) && todoItems.length > 0) {
