@@ -7,19 +7,130 @@
     <title>PROMISE</title>
 
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous"
+  />
 </head>
 <body>
     <div class="username"></div>
 
-    <div class="joke">
+    <!-- JOKE  -->
+    <!-- <div class="joke">
         <h1 class="joke-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa esse ipsam quis repellat inventore eveniet eius dolorum, laboriosam rem quidem maiores dolores provident. Nesciunt repellendus, voluptate nobis eveniet beatae consectetur?</h1>
         <button class="joke-button">
             <div class="loader"></div>
             <span>Get joke</span>
         </button>
+    </div> -->
+
+    <!-- PICSUM  -->
+    <!-- <div class="images">
+        <div class="image-loader"></div>
     </div>
+    <button class="load-more">Load more</button> -->
+
+
+    <!-- JSON SERVER  -->
+    <form class="form-post" autocomplete="off">
+        <input type="text" name="image" placeholder="Image url" required />
+        <input type="text" name="title" placeholder="Enter your title" required />
+        <input
+          type="text"
+          name="author"
+          placeholder="Enter your author"
+          required
+        />
+        <input
+          type="text"
+          name="rating"
+          placeholder="Rating"
+          min="1"
+          max="5"
+          required
+        />
+        <input type="text" name="price" placeholder="Price" min="1" required />
+        <div>
+          <label for="best-seller">Best Seller?</label>
+          <input type="checkbox" name="bestSeller" id="best-seller" />
+        </div>
+        <input type="text" name="buyAmount" placeholder="Buy amount" value="0" />
+        <button type="submit" class="form-submit">Add course</button>
+      </form>
+      <input type="text" class="filter" name="filter" />
+      
+      <div class="course-list">
+        <!-- <div class="course-item">
+          <div class="course-image">
+            <img src="https://source.unsplash.com/random" alt="" />
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <div class="course-author">Evondev</div>
+            <div class="course-meta">
+              <div class="course-rating">5</div>
+              <div class="course-enroll">1000</div>
+            </div>
+            <div class="course-best-seller">Best seller</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <div class="course-image">
+            <img src="https://source.unsplash.com/random" alt="" />
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <div class="course-author">Evondev</div>
+            <div class="course-meta">
+              <div class="course-rating">5</div>
+              <div class="course-enroll">1000</div>
+            </div>
+            <div class="course-best-seller">Best seller</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <div class="course-image">
+            <img src="https://source.unsplash.com/random" alt="" />
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <div class="course-author">Evondev</div>
+            <div class="course-meta">
+              <div class="course-rating">5</div>
+              <div class="course-enroll">1000</div>
+            </div>
+            <div class="course-best-seller">Best seller</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <div class="course-image">
+            <img src="https://source.unsplash.com/random" alt="" />
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <div class="course-author">Evondev</div>
+            <div class="course-meta">
+              <div class="course-rating">5</div>
+              <div class="course-enroll">1000</div>
+            </div>
+            <div class="course-best-seller">Best seller</div>
+          </div>
+        </div> -->
+      </div>
 
     <!-- <script src="./js/apibasic.js"></script> -->
-    <script src="./js/joke.js"></script>
+    <!-- <script src="./js/joke.js"></script> -->
+    <!-- <script src="./js/picsum.js"></script> -->
+    <script src="js/jsonServer.js"></script>
 </body>
 </html>

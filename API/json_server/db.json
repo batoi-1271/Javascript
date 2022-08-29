@@ -1,0 +1,29 @@
+{
+  "posts": [],
+  "courses": [
+    {
+      "image": "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/289871872_1433281683804123_3146507799741831536_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=8jr7rFULVXYAX8q7MWu&_nc_ht=scontent.fhan14-1.fna&oh=00_AT8X8mo00e1BjUli0cYtnBVZl7UUQMvePUyNLhzZCXVpUw&oe=630B517C",
+      "title": "BaToi & his friends",
+      "author": "TranHao",
+      "rating": 5,
+      "price": 99,
+      "bestSeller": false,
+      "buyAmount": 0,
+      "id": 3
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1553272725-086100aecf5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80",
+      "title": "JSON SERVER 1",
+      "author": "BaToi",
+      "rating": 5,
+      "price": 90,
+      "bestSeller": true,
+      "buyAmount": 50,
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

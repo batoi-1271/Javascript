@@ -7,30 +7,30 @@ const cardsArray = [
         name: "youtube",
         img: "img/youtube.png",
     },
-    // {
-    //     name: "flash",
-    //     img: "img/flash.png",
-    // },
-    // {
-    //     name: "gift",
-    //     img: "img/gift.png",
-    // },
-    // {
-    //     name: "tron",
-    //     img: "img/tron.png",
-    // },
-    // {
-    //     name: "ufo",
-    //     img: "img/ufo.png",
-    // },
-    // {
-    //     name: "plant",
-    //     img: "img/plant.png",
-    // },
-    // {
-    //     name: "burger",
-    //     img: "img/burger.png",
-    // },
+    {
+        name: "flash",
+        img: "img/flash.png",
+    },
+    {
+        name: "gift",
+        img: "img/gift.png",
+    },
+    {
+        name: "tron",
+        img: "img/tron.png",
+    },
+    {
+        name: "ufo",
+        img: "img/ufo.png",
+    },
+    {
+        name: "plant",
+        img: "img/plant.png",
+    },
+    {
+        name: "burger",
+        img: "img/burger.png",
+    },
 ];
 
 let preCard;
@@ -98,6 +98,8 @@ grid.addEventListener('click', (e) => {
         }
         preCard = clicked;
     }
+    document.getElementById('autoplay').play();
+    document.getElementById('autoplay').loop();
 })
 
 // Hàm lấy ra những card giống nhau (.SELECTED) để ẩn đi.
